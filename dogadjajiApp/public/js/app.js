@@ -9674,9 +9674,23 @@ __webpack_require__.r(__webpack_exports__);
 function Footer() {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("footer", {
     children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
-      children: ["Author: Ivona Vlasic", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
-        href: "mailto:ivonavlasic99@gmail.com",
-        children: "ivonavlasic99@gmail.com"
+      children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("ul", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+          children: ["Ivona Vlasic  ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
+            href: "mailto:ivonavlasic99@gmail.com",
+            children: "ivonavlasic99@gmail.com"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+          children: ["Nikolina Nikolic  ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
+            href: "mailto:nn20180320@student.fon.bg.ac.rs",
+            children: "nn20180320@student.fon.bg.ac.rs"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+          children: ["Andrijana Mitic ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("a", {
+            href: "mailto:mitic.andrijana.9@gmail.com",
+            children: "mitic.andrijana.9@gmail.com"
+          })]
+        })]
       })]
     })
   });
@@ -15083,7 +15097,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/*za navbar*/\n.navbar {\n  display: flex;\n  flex-direction: row;\n  background-color: #eedb6d;\n  border-bottom-style: solid;\n  border-bottom-width: 2px;\n  border-bottom-color: black;\n  align-items: center;\n  min-height: 60px;\n  padding-left: 25px;\n  font-size: large;\n  color: black;\n  text-decoration: none;\n}\n.navbar-items {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  margin-left: 20px;\n  text-decoration: none;\n  color: black;\n}\n\n\n/*futer*/\nfooter {\n  text-align: center;\n  padding: 3px;\n  background-color: #eedb6d;\n  color: black;\n\n}\na{\n  text-decoration: none;\n}\n\n\n\n \n \n \n \n#right{\n  padding: 25px 40px;\n  margin: 10%;\n}\n#right h2{\n  position:relative;\n  padding-bottom: 10px;\n  margin-bottom: 10px;\n}\n \n.field{\n  width: 100%;\n  padding: 0.5rem 1rem;\n  outline: none;\n  border: 2px solid rgba(0, 0, 0, 0);\n  background-color:  rgba(230, 230, 230, 0.6);\n  font-size: 1.1rem;\n  margin-bottom: 22px;\n  transition:.3s;\n}\n.field:hover{\n  background-color: rgba(0, 0, 0, 0.1);\n}\n.field:focus{\n  background-color: #fff;\n  border:2px solid #eedb6d;\n}\n.area{\n  min-height: 150px;\n}\n\n \n@media screen and (max-width:880px) {\n  #contact-box{\n      grid-template-columns: 1fr;\n  }\n  #left{\n      height: 200px;\n  }\n}\n\n\n/*za dogadjaje*/\n* {\n  box-sizing: border-box;\n}\nbody{\n    margin: 0;\n    background-color: rgba(0, 0, 0, 0.719);\n}\n \n \n.card {\n  margin: 10px;\n  background-color: #eedb6d;\n\n  overflow: hidden;\n  width: 250px;\n  height: 600px;\n \n\n}\n.card-header img {\n  width: 100%;\n \n  -o-object-fit: cover;\n \n     object-fit: cover;\n}\n.card-body {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: flex-start;\n  padding: 10px;\n  min-height: 250px;\n  \n}\n.naslovKartice{\n  font-size:20px;\n}\n.opis{\n  font-size:25px;\n}\n.cena{\n  font-size:250px;\n  text-decoration:  none;\n  margin:0;\n}\n \n.tag {\n \n  border-radius: 50px;\n  font-size: 12px;\n  margin: 0;\n  color: black;\n  padding: 2px 10px;\n  text-transform: uppercase;\n \n}\n.tag-teal {\n  background-color: #eedb6d;\n}\n \n\n.card-body p {\n  font-size: 13px;\n  margin: 0 0 40px;\n}\n.card-img-top{\n  height:300px;\n  width: auto;\n} \n\n.all-events{\n   \n     \n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  margin:9%;\n  margin-top: 50px;\n\n  \n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/*za navbar*/\n.navbar {\n  display: flex;\n  flex-direction: row;\n  background-color: #eedb6d;\n  border-bottom-style: solid;\n  border-bottom-width: 2px;\n  border-bottom-color: black;\n  align-items: center;\n  min-height: 60px;\n  padding-left: 25px;\n  font-size: large;\n  color: black;\n  text-decoration: none;\n}\n.navbar-items {\n  display: flex;\n  flex-direction: row;\n  align-items: center;\n  margin-left: 20px;\n  text-decoration: none;\n  color: black;\n}\n\n\n/*futer*/\nfooter {\n  text-align: center;\n  padding: 3px;\n  background-color: #eedb6d;\n  color: black;\n\n}\na{\n  text-decoration: none;\n}\n\n\n\n \n \n \n \n#right{\n  padding: 25px 40px;\n  margin: 10%;\n}\n#right h2{\n  position:relative;\n  padding-bottom: 10px;\n  margin-bottom: 10px;\n}\n \n.field{\n  width: 100%;\n  padding: 0.5rem 1rem;\n  outline: none;\n  border: 2px solid rgba(0, 0, 0, 0);\n  background-color:  rgba(230, 230, 230, 0.6);\n  font-size: 1.1rem;\n  margin-bottom: 22px;\n  transition:.3s;\n}\n.field:hover{\n  background-color: rgba(0, 0, 0, 0.1);\n}\n.field:focus{\n  background-color: #fff;\n  border:2px solid #eedb6d;\n}\n.area{\n  min-height: 150px;\n}\n\n \n@media screen and (max-width:880px) {\n  #contact-box{\n      grid-template-columns: 1fr;\n  }\n  #left{\n      height: 200px;\n  }\n}\n\n\n/*za dogadjaje*/\n* {\n  box-sizing: border-box;\n}\nbody{\n    margin: 0;\n    background-color: rgba(0, 0, 0, 0.719);\n}\n \n \n.card {\n  margin: 10px;\n  background-color: #eedb6d;\n\n  overflow: hidden;\n  width: 250px;\n  height: 600px;\n \n\n}\n.card-header img {\n  width: 100%;\n \n  -o-object-fit: cover;\n \n     object-fit: cover;\n}\n.card-body {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: flex-start;\n  padding: 10px;\n  min-height: 250px;\n  \n}\n.naslovKartice{\n  font-size:20px;\n}\n.opis{\n  font-size:25px;\n}\n.cena{\n  font-size:250px;\n  text-decoration:  none;\n  margin:0;\n}\n \n.tag {\n \n  border-radius: 50px;\n  font-size: 12px;\n  margin: 0;\n  color: black;\n  padding: 2px 10px;\n  text-transform: uppercase;\n \n}\n.tag-teal {\n  background-color: #eedb6d;\n}\n \n\n.card-body p {\n  font-size: 13px;\n  margin: 0 0 40px;\n}\n.card-img-top{\n  height:300px;\n  width: auto;\n} \n\n.all-events{\n   \n     \n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  margin:9%;\n  margin-top: 50px;\n\n  \n}\nli{\n  text-decoration: none;\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
