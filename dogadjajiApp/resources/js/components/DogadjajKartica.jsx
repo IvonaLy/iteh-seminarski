@@ -1,6 +1,6 @@
  
- import { BiTime } from 'react-icons/bi';
- import { ImPriceTags } from 'react-icons/im';
+ import { BiTime ,BiCalendar} from 'react-icons/bi';
+ import { BiCategory } from 'react-icons/bi';
 
  function DogadjajKartica({dogadjaj,dodaj}) {
      return (
@@ -8,19 +8,20 @@
          <div className="card">
       
          <div className="card-header" >
-              <img className='card-img-top'  src ={dogadjaj.image}   /> 
+              <img className='card-img-top'  src ={dogadjaj.slika}   /> 
          </div>
          <div className="card-body">
-             <div className="tag tag-teal"> <BiTime></BiTime>{dogadjaj.vreme}    </div>  
-             <div className="tag tag-teal"> <ImPriceTags></ImPriceTags>{dogadjaj.cena_ulaznice} RSD    </div>  
+         <h4 className = "naslovKartice">  {dogadjaj.naziv}   </h4>
+             <div className="tag tag-teal"> <BiTime></BiTime>{dogadjaj.vreme}    </div>  <br />
+             <div className="tag tag-teal1"> <BiCalendar></BiCalendar>{dogadjaj.datum}    </div>  <br />
+             
+              
 
              
-             <h4 className = "naslovKartice">  {dogadjaj.naziv}   </h4>
-             <p className="opis">{dogadjaj.opis}</p>
- 
-             
-             <p className='cena'>  {dogadjaj.mesto}  </p>   
             
+           
+             <p className='cena'>  {dogadjaj.mesto.naziv_mesta}  </p>   
+             <div className="tag tag-teal2"> <BiCategory></BiCategory>{dogadjaj.kategorija.naziv}    </div>  
              <button className="sortbtn btn" onClick={()=>dodaj(dogadjaj.id)}>Dodaj u omiljene</button>
              
              

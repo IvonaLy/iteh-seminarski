@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom';
  
  
@@ -11,59 +11,36 @@ import { useState } from 'react';
 import Dogadjaji from './Dogadjaji';
 import Omiljeni from './Omiljeni';
 import Login from './Login';
-
+import axios from 'axios';
+const axiosInstance = axios.create({
+  baseURL: process.env.REACT_APP_API_URL,
+});
 function Example() {
     const[token,setToken] = useState();
 
 
-  const [dogadjaji] = useState([
-    {
-      id: 1,
-      image: "https://belgrade-beat.rs/photos/activities/3423/t-1673860579.jpg",
-      naziv: "Okupacija Srbije",    
-      opis:  "Posetite tribinu i konferenciju za štampu pod nazivom Okupacija Srbije ",
-      vreme: "13:00",
-      mesto: "Pres centar UNS",
-      cena_ulaznice: 1000,
-      omiljen:0
-    },
-    {
-      id: 2,
-      image: "https://belgrade-beat.rs/photos/activities/505/t-1515769313.jpg",
-      naziv: "Plivanje za Casni krst",    
-      opis:  "Tradicionalna verska manifestacija obeležavanje praznika Krstovdan i Bogojavljenje ",
-      vreme: "12:00",
-      mesto: "Zemunski kej",
-      cena_ulaznice: 0,
-      omiljen:0
-
-    },
-    {
-      id: 3,
-      image: "https://belgrade-beat.rs/photos/activities/3353/t-1669822980.jpg",
-      naziv: "Benito Roman",    
-      opis:  "Izložba Veličanstvena decenija. Ustav u praksi. Fotografije Benita Romana, 1975 - 1985.",
-      vreme: "13:00",
-      mesto: "Institut Servantes",
-      cena_ulaznice:300,
-      omiljen:0
-
-
-    },
-    {
-      id: 4,
-      image: "https://belgrade-beat.rs/photos/activities/3383/t-1671250452.jpg",
-      naziv: "Zimski festival na Tasmajdanu",    
-      opis:  "Bogat programmom za sve generacije ",
-      vreme: "10:00",
-      mesto: "Park Tasmajdan",
-      cena_ulaznice:400,
-      omiljen:0
-
-
-    },
-  ])
+  const [dogadjaji,setDogadjaji] = useState([ ])
   const [omiljeni, setOmiljeni] = useState([]);
+
+
+  useEffect(() => {
+    const getDogadjaji = async () => {
+      try {
+        const res = await axiosInstance.get( "http://127.0.0.1:8000/api/dogadjaji",
+          {
+            headers:{'Authorization': `Bearer ${ window.sessionStorage.getItem('auth_token')}`},
+          }
+        );
+        setDogadjaji(res.data.data);
+        console.log(res.data.data)
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getDogadjaji();
+  }, [ axiosInstance]);
+
+
 
   function osvezi() {
     let fav = dogadjaji.filter((p) => p.omiljen > 0);

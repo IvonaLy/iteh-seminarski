@@ -27,7 +27,7 @@ function Login({addToken}) {
         axios
             .post("http://127.0.0.1:8000/api/login", userData )
             .then((res)=>{  
-                console.log(res.data[0]);
+                console.log(res.data);
                 if(res.data.success===true){             
                    
                   

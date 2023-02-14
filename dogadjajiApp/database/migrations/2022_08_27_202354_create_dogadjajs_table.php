@@ -22,6 +22,8 @@ class CreateDogadjajsTable extends Migration
             $table->foreignId('mesto_id');
             $table->foreignId('user_id');
             $table->string('slika');
+            $table->integer('omiljen')->default(0);
+
 
 
             $table->timestamps();

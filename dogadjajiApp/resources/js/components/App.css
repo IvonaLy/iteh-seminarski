@@ -143,6 +143,15 @@ body{
   background-color: #eedb6d;
 }
  
+.tag-teal1 {
+  background-color: #6deea3;
+}
+
+.tag-teal2 {
+  background-color: #f38841;
+}
+
+
 
 .card-body p {
   font-size: 13px;
