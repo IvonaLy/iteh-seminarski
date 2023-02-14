@@ -31,7 +31,6 @@ class AutfController extends Controller
         $token = $user->createToken('auth_token')->plainTextToken;
         return response()->json(['data' => $user, 'acess_token' => $token, 'token_type' => 'Bearer']);
     }
-
     public function login(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -40,7 +39,7 @@ class AutfController extends Controller
         ]);
 
         if ($validator->fails()) {
-            return response()->json($validator->errors());
+            return response()->json(['success'=>false]);
         }
 
         if (!Auth::attempt($request->only('email', 'password'))) {
@@ -49,14 +48,43 @@ class AutfController extends Controller
 
         $user = User::where('email', $request['email'])->firstOrFail();
 
-        $token = $user->createToken('LoginToken')->plainTextToken;
 
-        $response = [
-            'user' => $user,
-            'token' => $token
-        ];
+        if(!$user){
+            return response()->json([
+                'status'=>401,
+                'message'=>'Invalid credentials',
+            ]);
+        }else{
+            if($user->admin==1){
+                $role='admin';
+                $token = $user->createToken($user->email.'_AdminToken',['server:admin'])->plainTextToken;
+                $response = [
+                    'status'=>200,
+                    'username'=>"Admin",
+                    'token' => $token,
+                    'role'=> $role,
+                    'id'=>$user->id
+                ];
+                return response()->json([$response,'success'=>true ]);
+            }else{
+                $role=' ';
+                $token = $user->createToken($user->email.'_Token',[''])->plainTextToken;
+                $response = [
+                    'status'=>200,
+                    'username'=>$user->name,
+                    'token' => $token,
+                    'role'=> $role,
+                    'id'=>$user->id
+                ];
+                return response()->json([$response,'success'=>true ]);
+            }
+        }
 
-        return response()->json($response);
+    
+
+
+
+        
     }
 
     public function logout()

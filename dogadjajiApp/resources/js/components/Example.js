@@ -10,8 +10,12 @@ import Kontakt from './Kontakt';
 import { useState } from 'react';
 import Dogadjaji from './Dogadjaji';
 import Omiljeni from './Omiljeni';
+import Login from './Login';
 
 function Example() {
+    const[token,setToken] = useState();
+
+
   const [dogadjaji] = useState([
     {
       id: 1,
@@ -78,12 +82,16 @@ function Example() {
     osvezi();
 
   }
+  function addToken(auth_token){
+    setToken(auth_token);
+  }
   return (
     <div className="App">
        <BrowserRouter  >
-      <Navbar ></Navbar>
+      <Navbar token={token} ></Navbar>
       <Routes>
-        <Route path="/" element={<Dogadjaji dogadjaji={dogadjaji} dodaj={dodaj}></Dogadjaji>}></Route>
+        <Route path="/" element={<Login addToken={addToken}></Login>}></Route>
+        <Route path="/dogadjaji" element={<Dogadjaji dogadjaji={dogadjaji} dodaj={dodaj}></Dogadjaji>}></Route>
         <Route path="/omiljeni" element={<Omiljeni dogadjaji={omiljeni} ></Omiljeni>}></Route>
          
         <Route path="/kontakt" element={<Kontakt></Kontakt>}></Route>
