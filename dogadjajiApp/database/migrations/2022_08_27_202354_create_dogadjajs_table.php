@@ -20,6 +20,8 @@ class CreateDogadjajsTable extends Migration
             $table->string('datum');
             $table->foreignId('kategorija_id');
             $table->foreignId('mesto_id');
+            $table->foreignId('user_id');
+            $table->string('slika');
 
 
             $table->timestamps();

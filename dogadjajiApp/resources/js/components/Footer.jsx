@@ -3,7 +3,7 @@
 function Footer() {
   return (
 
-    <footer>
+    <footer style={{marginTop:"10%"}}>
         <ul> 
         <li>Ivona Vlasic  </li>
         <li>Nikolina Nikolic  </li>

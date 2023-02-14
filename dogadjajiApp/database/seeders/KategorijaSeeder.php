@@ -29,5 +29,15 @@ class KategorijaSeeder extends Seeder
         $k4=new Kategorija();
         $k4->naziv="Aktivnost i dozivljaj";
         $k4->save();
+
+        $k4=new Kategorija();
+        $k4->naziv="Umetnost i kultura";
+        $k4->save();
+
+        $k4=new Kategorija();
+        $k4->naziv="Sport i adrenalin";
+        $k4->save();
+
+
     }
 }

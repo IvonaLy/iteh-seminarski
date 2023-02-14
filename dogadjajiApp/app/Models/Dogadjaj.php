@@ -14,7 +14,9 @@ class Dogadjaj extends Model
         'vreme',
         'datum',
         'kategorija_id',
-        'mesto_id'
+        'mesto_id',
+        'user_id',
+        'slika'
     ];
 
     public function mesto()

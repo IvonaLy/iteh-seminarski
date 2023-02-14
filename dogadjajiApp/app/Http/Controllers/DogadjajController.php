@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\DogadjajResource;
 use App\Models\Dogadjaj;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -15,7 +16,7 @@ class DogadjajController extends Controller
      */
     public function index()
     {
-        return Dogadjaj::all();
+        return DogadjajResource::collection(Dogadjaj::all());
     }
 
     /**
@@ -66,7 +67,7 @@ class DogadjajController extends Controller
      */
     public function show($id)
     {
-        return Dogadjaj::find($id);
+        return new DogadjajResource(Dogadjaj::find($id));
     }
 
     /**

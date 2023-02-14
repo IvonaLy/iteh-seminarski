@@ -1,0 +1,29 @@
+<?php
+
+namespace App\Http\Resources;
+
+use App\Models\Kategorija;
+use Illuminate\Http\Resources\Json\JsonResource;
+
+class DogadjajResource extends JsonResource
+{
+    /**
+     * Transform the resource into an array.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
+     */
+    public function toArray($request)
+    {
+        return  [
+            'id' => $this->resource->id,
+            'naziv' => $this->resource->naziv,
+            'vreme' => $this->resource->vreme,
+            'kategorija' => Kategorija::find($this->resource->kategorija_id),
+            'mesto' => Kategorija::find($this->resource->mesto_id),
+            'user' => Kategorija::find($this->resource->user_id), 
+            'slika' => $this->resource->slika,
+            
+        ];
+    }
+}

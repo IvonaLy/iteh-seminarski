@@ -41,7 +41,7 @@ function Navbar({token}) {
         {
 
             token==null? 
-               <Link to="/" className="navbar-items">Login  </Link>
+               <></>
                
             :
                 window.sessionStorage.getItem("auth_name")=='Admin'  ? 

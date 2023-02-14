@@ -14,6 +14,37 @@ class MestoSeeder extends Seeder
      */
     public function run()
     {
-        Mesto::factory(5)->create();
+         $m1 = new Mesto();
+         $m1->naziv_mesta="Institut Servantes";
+         $m1->kapacitet=100;
+         $m1->adresa="Čika-Ljubina 19";
+         $m1->save();
+
+         $m1 = new Mesto();
+         $m1->naziv_mesta="Galerija Haos";
+         $m1->kapacitet=50;
+         $m1->adresa="Dositejeva 3";
+         $m1->save();
+
+
+         $m1 = new Mesto();
+         $m1->naziv_mesta="Savski park";
+         $m1->kapacitet=55;
+         $m1->adresa="Savski park";
+         $m1->save();
+
+
+         $m1 = new Mesto();
+         $m1->naziv_mesta="Institut za transfuziju krvi";
+         $m1->kapacitet=15;
+         $m1->adresa="Svetog Save 39";
+         $m1->save();
+
+         $m1 = new Mesto();
+         $m1->naziv_mesta="Stark arena";
+         $m1->kapacitet=20000;
+         $m1->adresa="Bulevar Arsenija Carnojevica 58";
+         $m1->save();
+
     }
 }
