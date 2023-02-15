@@ -67,7 +67,34 @@ function Example() {
   function addToken(auth_token){
     setToken(auth_token);
   }
- 
+  function obrisi(id){
+  
+    axios
+    .delete("http://127.0.0.1:8000/api/dogadjaji/"+id,{headers:{'Authorization': `Bearer ${ window.sessionStorage.getItem('auth_token')}`} } )
+    .then((res)=>{  
+        console.log(res.data);
+        const token = window.sessionStorage.getItem('auth_token');
+        window. location. reload();
+        window.sessionStorage.set('auth_token',token);
+         
+    })
+    .catch(function (error) {
+        if (error.response) {
+          // Request made and server responded
+          console.log(error.response.data);
+          
+          console.log(error.response.status);
+          console.log(error.response.headers);
+        } else if (error.request) {
+          // The request was made but no response was received
+          console.log(error.request);
+        } else {
+          // Something happened in setting up the request that triggered an Error
+          console.log('Error', error.message);
+        }
+    
+      });
+  }
   return (
     <div className="App">
        <BrowserRouter  >
@@ -82,7 +109,7 @@ function Example() {
         <Route path="/kontakt" element={<Kontakt></Kontakt>}></Route>
 
         <Route path="/admin/dodaj" element={<Dodaj></Dodaj>}></Route>
-        <Route path="/admin" element={<AdminPocetna dogadjaji={dogadjaji}></AdminPocetna>}></Route>
+        <Route path="/admin" element={<AdminPocetna dogadjaji={dogadjaji} obrisi={obrisi}></AdminPocetna>}></Route>
       
 
 

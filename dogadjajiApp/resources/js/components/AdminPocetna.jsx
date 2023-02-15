@@ -1,12 +1,12 @@
 import { BsFillTrashFill, BsPencilFill } from 'react-icons/bs';
  
  
-function AdminPocetna({dogadjaji}) {
+function AdminPocetna({dogadjaji,obrisi}) {
 
     return (
   
-      <div>
-        <table id="dtBasicExample" className="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+      <div className='adminPocetna'>
+        <table id="dtBasicExample" className="table table-striped table-bordered table-sm" cellSpacing="0" width="100%">
           <thead>
             <tr>
               <th className="th-sm">Naziv
