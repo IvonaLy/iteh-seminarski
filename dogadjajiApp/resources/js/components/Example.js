@@ -16,6 +16,7 @@ import Login from './Login';
 import axios from 'axios';
 import DogadjajiRegion from './DogadjajiRegion';
 import Dodaj from './Dodaj';
+ 
 const axiosInstance = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
 });
@@ -66,6 +67,7 @@ function Example() {
   function addToken(auth_token){
     setToken(auth_token);
   }
+ 
   return (
     <div className="App">
        <BrowserRouter  >
@@ -79,8 +81,9 @@ function Example() {
          
         <Route path="/kontakt" element={<Kontakt></Kontakt>}></Route>
 
-        <Route path="/admin" element={<AdminPocetna></AdminPocetna>}></Route>
         <Route path="/admin/dodaj" element={<Dodaj></Dodaj>}></Route>
+        <Route path="/admin" element={<AdminPocetna dogadjaji={dogadjaji}></AdminPocetna>}></Route>
+      
 
 
         
