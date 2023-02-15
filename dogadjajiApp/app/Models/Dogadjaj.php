@@ -15,7 +15,7 @@ class Dogadjaj extends Model
         'datum',
         'kategorija_id',
         'mesto_id',
-        'user_id',
+ 
         'slika'
     ];
 

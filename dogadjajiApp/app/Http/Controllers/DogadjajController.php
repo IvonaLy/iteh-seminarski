@@ -43,7 +43,7 @@ class DogadjajController extends Controller
             'datum' => 'required|string',
             'kategorija_id'=>'required|integer|exists:kategorijas,id',
             'mesto_id'=>'required|integer|exists:mestos,id',
-            'user_id'=>'required|integer|exists:users,id',
+             
             'slika' => 'required|string', 
 
              
@@ -58,7 +58,7 @@ class DogadjajController extends Controller
             'omiljen' =>0,
             'kategorija_id' => $request->kategorija_id,
             'mesto_id' => $request->mesto_id,  
-            'user_id' => $request->user_id,  
+           
             'slika' => $request->slika,  
 
         ]);
@@ -103,7 +103,7 @@ class DogadjajController extends Controller
             'datum' => 'required|string',
             'kategorija_id'=>'required|integer|exists:kategorijas,id',
             'mesto_id'=>'required|integer|exists:mestos,id',
-            'user_id'=>'required|integer|exists:users,id',
+         
             'slika' => 'required|string', 
 
              
@@ -119,7 +119,7 @@ class DogadjajController extends Controller
             $d->datum=$request->datum;
             $d->kategorija_id=$request->kategorija_id;
             $d->mesto_id=$request->mesto_id; 
-            $d->user_id=$request->user_id; 
+            
             $d->slika=$request->slika; 
              
             $d->save();

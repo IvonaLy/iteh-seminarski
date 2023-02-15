@@ -26,10 +26,12 @@ class DatabaseSeeder extends Seeder
 
 
         User::factory(10)->create();
+ 
 
         (new KategorijaSeeder())->run();
         (new MestoSeeder())->run();
         (new DogadjajSeeder())->run();
+        (new KartaSeeder())->run();
 
     }
 }

@@ -17,6 +17,7 @@ import axios from 'axios';
 import DogadjajiRegion from './DogadjajiRegion';
 import Dodaj from './Dodaj';
 import Izmeni from './Izmeni';
+import Statistike from './Statistike';
  
 const axiosInstance = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
@@ -117,8 +118,8 @@ function Example() {
          
         <Route path="/kontakt" element={<Kontakt></Kontakt>}></Route>
 
+        <Route path="/admin/stats" element={<Statistike dogadjaji={dogadjaji}></Statistike>}></Route>
         <Route path="/admin/izmeni" element={<Izmeni id={izmenaID} dogadjaj={dogadjaj}></Izmeni>}></Route>
-
         <Route path="/admin/dodaj" element={<Dodaj></Dodaj>}></Route>
         <Route path="/admin" element={<AdminPocetna dogadjaji={dogadjaji} obrisi={obrisi} setIzmeniID={postaviIDZaIzmenu}></AdminPocetna>}></Route>
       
