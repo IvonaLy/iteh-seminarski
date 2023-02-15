@@ -98,12 +98,14 @@ class DogadjajController extends Controller
     public function update(Request $request, $id)
     {
         $validator = Validator::make($request->all(), [
-            'naziv' => 'string|max:100',
-            'vreme' => 'string', 
-            'datum' => 'string',
-            'kategorija_id'=>'',
-            'mesto_id'=>'',
-           
+            'naziv' => 'required|string|max:100',
+            'vreme' => 'required|string', 
+            'datum' => 'required|string',
+            'kategorija_id'=>'required|integer|exists:kategorijas,id',
+            'mesto_id'=>'required|integer|exists:mestos,id',
+            'user_id'=>'required|integer|exists:users,id',
+            'slika' => 'required|string', 
+
              
         ]);
 
@@ -117,7 +119,9 @@ class DogadjajController extends Controller
             $d->datum=$request->datum;
             $d->kategorija_id=$request->kategorija_id;
             $d->mesto_id=$request->mesto_id; 
-
+            $d->user_id=$request->user_id; 
+            $d->slika=$request->slika; 
+             
             $d->save();
             return response()->json(['Uspesno izmenjeno!',  $d]);
 

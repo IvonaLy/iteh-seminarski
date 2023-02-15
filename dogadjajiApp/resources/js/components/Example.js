@@ -16,6 +16,7 @@ import Login from './Login';
 import axios from 'axios';
 import DogadjajiRegion from './DogadjajiRegion';
 import Dodaj from './Dodaj';
+import Izmeni from './Izmeni';
  
 const axiosInstance = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
@@ -23,7 +24,7 @@ const axiosInstance = axios.create({
 function Example() {
     const[token,setToken] = useState();
 
-
+    const [izmenaID, setIzmenaID] = useState(0); 
   const [dogadjaji,setDogadjaji] = useState([ ])
   const [omiljeni, setOmiljeni] = useState([]);
 
@@ -73,8 +74,8 @@ function Example() {
     .delete("http://127.0.0.1:8000/api/dogadjaji/"+id,{headers:{'Authorization': `Bearer ${ window.sessionStorage.getItem('auth_token')}`} } )
     .then((res)=>{  
         console.log(res.data);
-        const token = window.sessionStorage.getItem('auth_token');
-        window. location. reload();
+        const token = window.sessionStorage.getItem('auth_token');d
+        
         window.sessionStorage.set('auth_token',token);
          
     })
@@ -95,6 +96,14 @@ function Example() {
     
       });
   }
+  const[dogadjaj,setDogadjaj] = useState();
+
+  function postaviIDZaIzmenu(id){ //fja koja vraca podatke o dogadjaju koji azuriramo
+    setIzmenaID(id);
+
+       let event = dogadjaji.filter((d)=>d.id==id);
+       setDogadjaj(event[0])
+  }
   return (
     <div className="App">
        <BrowserRouter  >
@@ -108,8 +117,10 @@ function Example() {
          
         <Route path="/kontakt" element={<Kontakt></Kontakt>}></Route>
 
+        <Route path="/admin/izmeni" element={<Izmeni id={izmenaID} dogadjaj={dogadjaj}></Izmeni>}></Route>
+
         <Route path="/admin/dodaj" element={<Dodaj></Dodaj>}></Route>
-        <Route path="/admin" element={<AdminPocetna dogadjaji={dogadjaji} obrisi={obrisi}></AdminPocetna>}></Route>
+        <Route path="/admin" element={<AdminPocetna dogadjaji={dogadjaji} obrisi={obrisi} setIzmeniID={postaviIDZaIzmenu}></AdminPocetna>}></Route>
       
 
 
