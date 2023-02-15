@@ -20,7 +20,7 @@ class KartaResource extends JsonResource
         [    'id' => $this->resource->id,
          
              
-            'dogadjaj' => Dogadjaj::find($this->resource->dogadjaj_id),
+            'dogadjaj' => new DogadjajResource(Dogadjaj::find($this->resource->dogadjaj_id)),
           
             'user' => User::find($this->resource->user_id), 
        

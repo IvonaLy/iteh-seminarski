@@ -28,9 +28,7 @@ function Example() {
     const [izmenaID, setIzmenaID] = useState(0); 
   const [dogadjaji,setDogadjaji] = useState([ ])
   const [karte,setKarte] = useState([ ])
-
-  const [omiljeni, setOmiljeni] = useState([]);
-
+ 
 
   useEffect(() => {
     const getDogadjaji = async () => {
@@ -67,24 +65,7 @@ function Example() {
     getKarte();
   }, [ axiosInstance]);
 
-
-  function osvezi() {
-    let fav = dogadjaji.filter((p) => p.omiljen > 0);
-    setOmiljeni (fav);
-    console.log(omiljeni)
-  }
-  function dodaj( id) {
-    console.log(id)
-   
-    dogadjaji.forEach((d) => {
-      if (d.id === id) {
-        d.omiljen=1;
-        console.log(d)
-      }
-    });
-    osvezi();
-
-  }
+ 
   function addToken(auth_token){
     setToken(auth_token);
   }
@@ -124,16 +105,19 @@ function Example() {
        let event = dogadjaji.filter((d)=>d.id==id);
        setDogadjaj(event[0])
   }
+  function dodaj(){
+
+  }
   return (
     <div className="App">
        <BrowserRouter  >
       <Navbar token={token} ></Navbar>
       <Routes>
         <Route path="/" element={<Login addToken={addToken}></Login>}></Route>
-        <Route path="/dogadjaji" element={<Dogadjaji dogadjaji={dogadjaji} dodaj={dodaj}></Dogadjaji>}></Route>
         <Route path="/dogadjaji/balkan" element={<DogadjajiRegion ></DogadjajiRegion>}></Route>
-
-        <Route path="/omiljeni" element={<Omiljeni dogadjaji={omiljeni} ></Omiljeni>}></Route>
+        <Route path="/dogadjaji/moji" element={<Omiljeni karte={karte} ></Omiljeni>}></Route>
+        <Route path="/dogadjaji" element={<Dogadjaji dogadjaji={dogadjaji} dodaj={dodaj}></Dogadjaji>}></Route>
+ 
          
         <Route path="/kontakt" element={<Kontakt></Kontakt>}></Route>
 
