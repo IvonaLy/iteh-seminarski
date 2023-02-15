@@ -12,6 +12,7 @@ import Dogadjaji from './Dogadjaji';
 import Omiljeni from './Omiljeni';
 import Login from './Login';
 import axios from 'axios';
+import DogadjajiRegion from './DogadjajiRegion';
 const axiosInstance = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
 });
@@ -69,6 +70,8 @@ function Example() {
       <Routes>
         <Route path="/" element={<Login addToken={addToken}></Login>}></Route>
         <Route path="/dogadjaji" element={<Dogadjaji dogadjaji={dogadjaji} dodaj={dodaj}></Dogadjaji>}></Route>
+        <Route path="/dogadjaji/balkan" element={<DogadjajiRegion ></DogadjajiRegion>}></Route>
+
         <Route path="/omiljeni" element={<Omiljeni dogadjaji={omiljeni} ></Omiljeni>}></Route>
          
         <Route path="/kontakt" element={<Kontakt></Kontakt>}></Route>
