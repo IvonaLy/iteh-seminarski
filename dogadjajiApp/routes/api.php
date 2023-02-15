@@ -33,8 +33,9 @@ use Illuminate\Support\Facades\Route;
  Route::group(['middleware' => ['auth:sanctum']], function () {
 
     Route::get("/karte",[KartaController::class,'index']);
-    Route::get("/karte",[KartaController::class,'index']);
+ 
 
+    Route::post("/karte",[KartaController::class,'store']);
 
     Route::get("/mesto",[MestoController::class,'index']);
     Route::get("/mesto/{id}",[MestoController::class,'show']);
