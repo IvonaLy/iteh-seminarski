@@ -28,6 +28,7 @@
         "jquery": "^3.6.3",
         "react-bootstrap": "^2.7.2",
         "react-icons": "^4.7.1",
-        "react-router-dom": "^6.8.1"
+        "react-router-dom": "^6.8.1",
+        "react-vis": "^1.11.12"
     }
 }

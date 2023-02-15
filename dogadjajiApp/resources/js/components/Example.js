@@ -27,6 +27,8 @@ function Example() {
 
     const [izmenaID, setIzmenaID] = useState(0); 
   const [dogadjaji,setDogadjaji] = useState([ ])
+  const [karte,setKarte] = useState([ ])
+
   const [omiljeni, setOmiljeni] = useState([]);
 
 
@@ -47,6 +49,23 @@ function Example() {
     getDogadjaji();
   }, [ axiosInstance]);
 
+
+  useEffect(() => {
+    const getKarte = async () => {
+      try {
+        const res = await axiosInstance.get( "http://127.0.0.1:8000/api/karte",
+          {
+            headers:{'Authorization': `Bearer ${ window.sessionStorage.getItem('auth_token')}`},
+          }
+        );
+        setKarte(res.data.data);
+        console.log(res.data.data)
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getKarte();
+  }, [ axiosInstance]);
 
 
   function osvezi() {
@@ -118,7 +137,7 @@ function Example() {
          
         <Route path="/kontakt" element={<Kontakt></Kontakt>}></Route>
 
-        <Route path="/admin/stats" element={<Statistike dogadjaji={dogadjaji}></Statistike>}></Route>
+        <Route path="/admin/stats" element={<Statistike dogadjaji={dogadjaji} karte={karte}></Statistike>}></Route>
         <Route path="/admin/izmeni" element={<Izmeni id={izmenaID} dogadjaj={dogadjaj}></Izmeni>}></Route>
         <Route path="/admin/dodaj" element={<Dodaj></Dodaj>}></Route>
         <Route path="/admin" element={<AdminPocetna dogadjaji={dogadjaji} obrisi={obrisi} setIzmeniID={postaviIDZaIzmenu}></AdminPocetna>}></Route>

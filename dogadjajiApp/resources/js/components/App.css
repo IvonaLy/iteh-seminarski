@@ -8543,3 +8543,28 @@ table.dataTable thead .sorting_desc_disabled:before {
 .adminPocetna{
   margin: 5%;
 }
+
+
+
+.float-container {
+ 
+  padding: 20px;
+  margin:5%;
+}
+
+.float-child1 {
+  width: 45%;
+  float: left;
+  padding: 20px;
+  border: 2px solid black;
+  background-color: #eedb6d;
+  color:black;
+}  
+.float-child2{
+  width: 45%;
+  float: right;
+  padding: 20px;
+  border: 2px solid black;
+  background-color: #eedb6d;
+  color:black;
+}  
