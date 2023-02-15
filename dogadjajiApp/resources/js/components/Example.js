@@ -105,9 +105,7 @@ function Example() {
        let event = dogadjaji.filter((d)=>d.id==id);
        setDogadjaj(event[0])
   }
-  function dodaj(){
-
-  }
+ 
   return (
     <div className="App">
        <BrowserRouter  >
@@ -116,7 +114,7 @@ function Example() {
         <Route path="/" element={<Login addToken={addToken}></Login>}></Route>
         <Route path="/dogadjaji/balkan" element={<DogadjajiRegion ></DogadjajiRegion>}></Route>
         <Route path="/dogadjaji/moji" element={<Omiljeni karte={karte} ></Omiljeni>}></Route>
-        <Route path="/dogadjaji" element={<Dogadjaji dogadjaji={dogadjaji} dodaj={dodaj}></Dogadjaji>}></Route>
+        <Route path="/dogadjaji" element={<Dogadjaji dogadjaji={dogadjaji}  ></Dogadjaji>}></Route>
  
          
         <Route path="/kontakt" element={<Kontakt></Kontakt>}></Route>

@@ -3,14 +3,14 @@ import DogadjajKartica from "./DogadjajKartica";
 
  
  
- function Dogadjaji({dogadjaji,dodaj}) {
+ function Dogadjaji({dogadjaji}) {
  
     return (
         <div>
              
             <div className="all-events">
               
-               { dogadjaji .map((d) => ( <DogadjajKartica dogadjaj={d} key={d.id}  dodaj={dodaj} />  ))}
+               { dogadjaji .map((d) => ( <DogadjajKartica dogadjaj={d} key={d.id}  />  ))}
                      
                 
     
