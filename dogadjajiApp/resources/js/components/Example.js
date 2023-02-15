@@ -9,10 +9,13 @@ import Footer from './Footer';
 import Kontakt from './Kontakt';
 import { useState } from 'react';
 import Dogadjaji from './Dogadjaji';
+import AdminPocetna from './AdminPocetna';
+
 import Omiljeni from './Omiljeni';
 import Login from './Login';
 import axios from 'axios';
 import DogadjajiRegion from './DogadjajiRegion';
+import Dodaj from './Dodaj';
 const axiosInstance = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
 });
@@ -75,6 +78,11 @@ function Example() {
         <Route path="/omiljeni" element={<Omiljeni dogadjaji={omiljeni} ></Omiljeni>}></Route>
          
         <Route path="/kontakt" element={<Kontakt></Kontakt>}></Route>
+
+        <Route path="/admin" element={<AdminPocetna></AdminPocetna>}></Route>
+        <Route path="/admin/dodaj" element={<Dodaj></Dodaj>}></Route>
+
+
         
       </Routes>
         <Footer></Footer>

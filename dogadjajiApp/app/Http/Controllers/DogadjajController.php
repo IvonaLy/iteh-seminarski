@@ -41,8 +41,11 @@ class DogadjajController extends Controller
             'naziv' => 'required|string|max:100',
             'vreme' => 'required|string', 
             'datum' => 'required|string',
-            'kategorija_id'=>'required',
-            'mesto_id'=>'required',
+            'kategorija_id'=>'required|integer|exists:kategorijas,id',
+            'mesto_id'=>'required|integer|exists:mestos,id',
+            'user_id'=>'required|integer|exists:users,id',
+            'slika' => 'required|string', 
+
              
         ]);
 
@@ -52,8 +55,12 @@ class DogadjajController extends Controller
             'naziv' => $request->naziv, 
             'vreme' => $request->vreme, 
             'datum' => $request->datum,
+            'omiljen' =>0,
             'kategorija_id' => $request->kategorija_id,
             'mesto_id' => $request->mesto_id,  
+            'user_id' => $request->user_id,  
+            'slika' => $request->slika,  
+
         ]);
         $d->save();
         return response()->json(['Dogadjaj kreiran!', $d]);

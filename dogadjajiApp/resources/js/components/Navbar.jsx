@@ -46,7 +46,10 @@ function Navbar({token}) {
             :
                 window.sessionStorage.getItem("auth_name")=='Admin'  ? 
                 <>
-                  <Link to="/admin" className="navbar-items">Admin  </Link>
+                 <Link to="/admin" className="navbar-items">Admin  </Link>
+                  <Link to="/admin/dodaj" className="navbar-items">Dodaj  </Link>
+
+                 
                   <Link to="/" className="navbar-items" onClick={handleLogout}>Odjavi se  </Link>
                 </>
             :
