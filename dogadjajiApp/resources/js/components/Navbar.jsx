@@ -57,7 +57,7 @@ function Navbar({token}) {
             :
             <>
                         <Link to="/dogadjaji" className="navbar-items">Dogadjaji  </Link>
-                        <Link to="/dogadjaji/balkan" className="navbar-items">Dogadjaji na Balkanu  </Link>
+                        <Link to="/dogadjaji/nas" className="navbar-items">Nas dogadjaj  </Link>
           
                  <Link to="/dogadjaji/moji" className="navbar-items">  Moji dogadjaji </Link>   
                  <Link to="/" className="navbar-items" onClick={handleLogout}>Odjavi se  </Link>

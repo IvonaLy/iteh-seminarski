@@ -24,7 +24,7 @@ class DogadjajResource extends JsonResource
             'datum' => $this->resource->datum,
             'kategorija' => Kategorija::find($this->resource->kategorija_id),
             'mesto' => Mesto::find($this->resource->mesto_id),
-            'user' => User::find($this->resource->user_id), 
+          
             'slika' => $this->resource->slika,
             'omiljen' => $this->resource->omiljen,
 

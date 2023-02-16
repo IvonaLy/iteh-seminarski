@@ -22,6 +22,8 @@ use Illuminate\Support\Facades\Route;
 
 
  Route::get("/dogadjaji",[DogadjajController::class,'index']);
+ Route::get("/nasDogadjaj",[DogadjajController::class,'indexNas']);
+
  Route::get("/dogadjaji/{id}",[DogadjajController::class,'show']);
 
 

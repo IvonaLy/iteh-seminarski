@@ -6,7 +6,7 @@ use App\Http\Resources\DogadjajResource;
 use App\Models\Dogadjaj;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Support\Facades\Http;
 class DogadjajController extends Controller
 {
     /**
@@ -19,6 +19,15 @@ class DogadjajController extends Controller
         return DogadjajResource::collection(Dogadjaj::all());
     }
 
+    public function indexNas()
+    {
+        $response = Http::withHeaders([
+            'Authorization' => 'Bearer WQP3XGV66PP6FM26EHFV' 
+        ])->get('https://www.eventbriteapi.com/v3/events/551359951457',[
+            
+        ]);
+        return $response->json();
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -148,4 +157,9 @@ class DogadjajController extends Controller
            
        return response()->json('Trazeni objekat ne postoji u bazi');
     }
+
+
+
+
+
 }

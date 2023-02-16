@@ -32,12 +32,12 @@
     }
      return (
    
-         <div className="card">
+         <div className="card1">
       
-         <div className="card-header" >
-              <img className='card-img-top'  src ={dogadjaj.slika}   /> 
+         <div className="card-header1" >
+              <img className='card-img-top1'  src ={dogadjaj.slika}   /> 
          </div>
-         <div className="card-body">
+         <div className="card-body1">
          <h4 className = "naslovKartice">  {dogadjaj.naziv}   </h4>
              <div className="tag tag-teal"> <BiTime></BiTime>{dogadjaj.vreme}    </div>  <br />
              <div className="tag tag-teal1"> <BiCalendar></BiCalendar>{dogadjaj.datum}    </div>  <br />

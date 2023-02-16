@@ -14,10 +14,11 @@ import AdminPocetna from './AdminPocetna';
 import Omiljeni from './Omiljeni';
 import Login from './Login';
 import axios from 'axios';
-import DogadjajiRegion from './DogadjajiRegion';
+ 
 import Dodaj from './Dodaj';
 import Izmeni from './Izmeni';
 import Statistike from './Statistike';
+import NasDogadjaj from './NasDogadjaj';
  
 const axiosInstance = axios.create({
   baseURL: process.env.REACT_APP_API_URL,
@@ -105,14 +106,39 @@ function Example() {
        let event = dogadjaji.filter((d)=>d.id==id);
        setDogadjaj(event[0])
   }
+  const [dogadjaj2,setDogadjaj2] = useState([ ])
  
+  axios
+  .get("http://127.0.0.1:8000/api/nasDogadjaj/",{headers:{'Authorization': `Bearer ${ window.sessionStorage.getItem('auth_token')}`} } )
+  .then((res)=>{  
+      console.log(res.data);
+      setDogadjaj2(res.data)
+       
+       
+  })
+  .catch(function (error) {
+      if (error.response) {
+        // Request made and server responded
+        console.log(error.response.data);
+        
+        console.log(error.response.status);
+        console.log(error.response.headers);
+      } else if (error.request) {
+        // The request was made but no response was received
+        console.log(error.request);
+      } else {
+        // Something happened in setting up the request that triggered an Error
+        console.log('Error', error.message);
+      }
+  
+    });
   return (
     <div className="App">
        <BrowserRouter  >
       <Navbar token={token} ></Navbar>
       <Routes>
         <Route path="/" element={<Login addToken={addToken}></Login>}></Route>
-        <Route path="/dogadjaji/balkan" element={<DogadjajiRegion ></DogadjajiRegion>}></Route>
+        <Route path="/dogadjaji/nas" element={<NasDogadjaj dogadjaj={dogadjaj2} ></NasDogadjaj>}></Route>
         <Route path="/dogadjaji/moji" element={<Omiljeni karte={karte} ></Omiljeni>}></Route>
         <Route path="/dogadjaji" element={<Dogadjaji dogadjaji={dogadjaji}  ></Dogadjaji>}></Route>
  
