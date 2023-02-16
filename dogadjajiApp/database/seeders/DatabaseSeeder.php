@@ -7,6 +7,7 @@ use App\Models\Kategorija;
 use App\Models\Mesto;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -26,7 +27,16 @@ class DatabaseSeeder extends Seeder
 
 
         User::factory(10)->create();
- 
+        $user = User::create([
+            'name' => 'pera', 
+            'email' => 'pera@gmail.com', 
+            'password' => Hash::make('pera')]);
+
+            $user = User::create([
+                'name' => 'admin', 
+                'email' => 'admin@gmail.com', 
+                'admin' => 1, 
+                'password' => Hash::make('admin')]);
 
         (new KategorijaSeeder())->run();
         (new MestoSeeder())->run();
