@@ -8568,7 +8568,7 @@ table.dataTable thead .sorting_desc_disabled:before {
   background-color: #eedb6d;
   color:black;
 }  
-
+ 
 
 
 
@@ -8578,6 +8578,7 @@ table.dataTable thead .sorting_desc_disabled:before {
 	 transition: 200ms;
 	 background: #fff;
    margin:10%;
+   padding: 100px;
 }
  .card .card__title {
 	 display: flex;
@@ -8739,3 +8740,12 @@ table.dataTable thead .sorting_desc_disabled:before {
 	 color: #115dd8;
 }
  
+
+.nagrada{
+  margin: 10%;
+}
+
+.nagrada-slika{
+  width: 60vh;
+  
+}
